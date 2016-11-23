@@ -1,6 +1,7 @@
 
 #import "ViewController.h"
 #import "NikuShareSDK.h"
+#import "QrCodeImage.h"
 #import "WXApi.h"
 //#import "NikuShareData.h"
 @interface ViewController ()
@@ -74,7 +75,11 @@
     [button8 addTarget:self action:@selector(weiboNewsShare:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button8];
     
-    
+    UIButton *button9 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button9.frame = CGRectMake(95, 440, 200, 27);
+    [button9 setTitle:@"生成二维码" forState:UIControlStateNormal];
+    [button9 addTarget:self action:@selector(createQRCode:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button9];
     
     
     [[NikuShareSDK instance ]registWeixinAppId:@"wx67b6059559daff51" withGameName:@"暗黑信仰"];
@@ -255,7 +260,21 @@
     [[NikuShareSDK instance] nkShare:SHARETYPE_NEWS withChannel:SHARECHANNEL_WEIXIN];
 }
 
-
+-(void)createQRCode:(id)createQRCode{
+    
+    //创建logo图
+    NSString *filePath=[[NSBundle mainBundle] pathForResource:@"res2" ofType:@"jpg"];
+    NSData* imgData=[NSData dataWithContentsOfFile:filePath];
+    [UIImage imageWithData:imgData];
+    //创建二维码图大小
+    UIImageView* _imgView=[[UIImageView alloc]initWithFrame:CGRectMake(100, 100, [UIScreen mainScreen].bounds.size.width/2.0, [UIScreen mainScreen].bounds.size.width/2.0)];
+    //生成二维码
+    QrCodeImage* xxx=[QrCodeImage creatQRCodeWithURLString:@"http://www.baidu.com" superView:_imgView logoImage:[UIImage imageWithData:imgData] logoImageSize:CGSizeMake(50, 50) logoImageWithCornerRadius:100];
+    //显示一下
+    [self.view addSubview:xxx];
+    
+    // [self erweima];
+}
 
 
 

@@ -89,6 +89,7 @@
 		B75B064A1DE30236005DF787 /* res1thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = res1thumb.png; sourceTree = "<group>"; };
 		B75B064B1DE30236005DF787 /* res2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = res2.jpg; sourceTree = "<group>"; };
 		B75B064C1DE30236005DF787 /* res2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = res2.png; sourceTree = "<group>"; };
+		B75B065A1DE59988005DF787 /* QrCodeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QrCodeImage.h; path = NikuShareSDK/QrCodeImage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +156,7 @@
 		B75B05F21DE2F769005DF787 /* ShareSDKDemo1 */ = {
 			isa = PBXGroup;
 			children = (
+				B75B065A1DE59988005DF787 /* QrCodeImage.h */,
 				B75B06481DE30236005DF787 /* image_2.jpg */,
 				B75B06491DE30236005DF787 /* res1.jpg */,
 				B75B064A1DE30236005DF787 /* res1thumb.png */,
@@ -483,6 +485,7 @@
 				B75B06091DE2F769005DF787 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
